@@ -11,10 +11,10 @@ class WelcomeScreen extends StatelessWidget {
       backgroundColor: Color(0xffffffff),
       body: Stack(
         children: [
-          SvgPicture.asset("assets/icons/quiz.svg", fit: BoxFit.fill),
+          SvgPicture.asset("assets/icons/quiz.svg", width: 100, height: 100),//fit: BoxFit.fill),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.only(left: 87, top: 360, right: 87, bottom: 167),
+              padding: const EdgeInsets.only(left: 87, top: 290, right: 87, bottom: 167),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

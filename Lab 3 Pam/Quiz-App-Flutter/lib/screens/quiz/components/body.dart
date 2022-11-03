@@ -19,7 +19,6 @@ class Body extends StatelessWidget {
     QuestionController _questionController = Get.put(QuestionController());
     return Stack(
       children: [
-        SvgPicture.asset("assets/icons/bg.svg", fit: BoxFit.fill),
         SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +31,7 @@ class Body extends StatelessWidget {
               SizedBox(height: kDefaultPadding),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                    const EdgeInsets.only(left: 20, bottom: 0, top: 70),
                 child: Obx(
                   () => Text.rich(
                     TextSpan(
@@ -40,15 +39,15 @@ class Body extends StatelessWidget {
                           "Question ${_questionController.questionNumber.value}",
                       style: Theme.of(context)
                           .textTheme
-                          .headline4
-                          .copyWith(color: kSecondaryColor),
+                          .headline6
+                          .copyWith(color: Colors.grey, fontSize: 15),
                       children: [
                         TextSpan(
-                          text: "/${_questionController.questions.length}",
+                          text: " of ${_questionController.questions.length}",
                           style: Theme.of(context)
                               .textTheme
-                              .headline5
-                              .copyWith(color: kSecondaryColor),
+                              .headline6
+                              .copyWith(color: Colors.grey, fontSize: 15),
                         ),
                       ],
                     ),

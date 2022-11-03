@@ -9,10 +9,10 @@ class ScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController _qnController = Get.put(QuestionController());
     return Scaffold(
+      backgroundColor: Color(0xffffffff),
       body: Stack(
         fit: StackFit.expand,
         children: [
-          SvgPicture.asset("assets/icons/bg.svg", fit: BoxFit.fill),
           Column(
             children: [
               Spacer(flex: 3),
@@ -21,15 +21,15 @@ class ScoreScreen extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headline3
-                    .copyWith(color: kSecondaryColor),
+                    .copyWith(color: Colors.black),
               ),
-              Spacer(),
+              Spacer(flex: 1),
               Text(
                 "${_qnController.correctAns * 10}/${_qnController.questions.length * 10}",
                 style: Theme.of(context)
                     .textTheme
                     .headline4
-                    .copyWith(color: kSecondaryColor),
+                    .copyWith(color: Colors.black),
               ),
               Spacer(flex: 3),
             ],

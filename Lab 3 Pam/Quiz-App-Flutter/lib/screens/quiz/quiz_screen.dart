@@ -9,6 +9,7 @@ class QuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController _controller = Get.put(QuestionController());
     return Scaffold(
+      backgroundColor: Color(0xffffffff),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         // Fluttter show the back button automatically
@@ -17,6 +18,7 @@ class QuizScreen extends StatelessWidget {
         actions: [
           //FlatButton(onPressed: _controller.nextQuestion, child: Text("Skip")),
         ],
+
       ),
       body: Body(),
     );
