@@ -13,9 +13,6 @@ class ProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-
-    );
-    return Container(
       width: double.infinity,
       height: 15,
       decoration: BoxDecoration(
@@ -29,18 +26,18 @@ class ProgressBar extends StatelessWidget {
         builder: (controller) {
           return Stack(
             children: [
-              Positioned.fill(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 0),//.symmetric(horizontal: kDefaultPadding / 2),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("${(controller.animation.value * 60).round()} s", style: TextStyle(color: Colors.white)),
-                      SvgPicture.asset("assets/icons/clock.svg"),
-                    ],
-                  ),
-                ),
-              ),
+              // Positioned.fill(
+              //   child: Padding(
+              //     padding: const EdgeInsets.only(top: 0),//.symmetric(horizontal: kDefaultPadding / 2),
+              //     child: Row(
+              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //       children: [
+              //         Text("${(controller.animation.value * 60).round()} s", style: TextStyle(color: Colors.white)),
+              //         SvgPicture.asset("assets/icons/clock.svg"),
+              //       ],
+              //     ),
+              //   ),
+              // ),
 
               // LayoutBuilder provide us the available space for the conatiner
               // constraints.maxWidth needed for our animation
@@ -50,24 +47,25 @@ class ProgressBar extends StatelessWidget {
                   width: constraints.maxWidth * controller.animation.value,
                   decoration: BoxDecoration(
                      // gradient: kPrimaryGradient,
-                    color: Color(0xFF0BBC00), //#0BBC00
+                    color: Colors.red, //#0BBC00
+
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
               ),
-              // Positioned.fill(
-              //   child: Padding(
-              //     padding: const EdgeInsets.symmetric(
-              //         horizontal: kDefaultPadding / 2),
-              //     child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //       children: [
-              //         Text("${(controller.animation.value * 60).round()} sec"),
-              //         SvgPicture.asset("assets/icons/clock.svg"),
-              //       ],
-              //     ),
-              //   ),
-              // ),
+              Positioned.fill(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: kDefaultPadding / 2),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("${(controller.animation.value * 60).round()} sec"),
+                      SvgPicture.asset("assets/icons/clock.svg"),
+                    ],
+                  ),
+                ),
+              ),
             ],
           );
         },
